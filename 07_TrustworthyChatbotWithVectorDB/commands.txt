@@ -1,0 +1,15 @@
+sudo su - ec2-user
+ls -l
+unzip filename.zip
+more filename.ext
+psql -h <cluster_endpoint> -U postgres -d vector -w -f vector_config.sql
+KB_BUCKET=`aws s3 ls | grep wine-knowledgebase | cut -d " " -f 3`
+echo $KB_BUCKET
+aws s3 sync wine-kb/ s3://$KB_BUCKET/
+aws s3 cp filename.ext s3://$KB_BUCKET/filename.ext
+
+python3 -m venv .venv
+. .venv/bin/activate
+pip install -r requirements.txt
+rich winebot-kb.py -n --pager
+streamlit run winebot-kb.py
