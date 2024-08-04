@@ -1,0 +1,6 @@
+streamlit
+boto3
+langchain
+langchain_community
+sentence_transformers
+faiss-cpu
