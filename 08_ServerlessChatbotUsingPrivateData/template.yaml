@@ -1,0 +1,401 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 
+  SAM template for serverless chatbot
+
+Parameters:
+  KendraIndexId:
+    Description: ID of the Kendra Index 
+    Type: String
+
+  LabBucketName:
+    Description: Lab bucket name
+    Type: String
+    
+  BedrockWSS3Bucket:
+    Description: Serverless bucket name
+    Type: String
+
+  ApiGatewayStageName:
+    Default: prod  
+    Description : Stage name for the API Gateway
+    Type: String 
+
+  LambdaRole:
+    Description: Lambda Role ARN
+    Type: String
+
+Globals:
+  Function:
+    Timeout: 60
+    MemorySize: 512
+    Handler: app.lambda_handler
+    Runtime: python3.8
+  Api:
+    TracingEnabled: true
+    Cors:
+        AllowMethods: "'POST,OPTIONS'"
+        AllowHeaders: "'Content-Type', 'Authorization', 'X-Forwarded-For', 'X-Api-Key', 'X-Amz-Date', 'X-Amz-Security-Token'"
+        AllowOrigin: "'*'"
+        
+
+Resources:
+# REST API
+  BedrockLambdaApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: serverless-chatbot
+      Description: Mock Integration REST API demo
+          
+  RagResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId: !GetAtt BedrockLambdaApi.RootResourceId
+      PathPart: 'rag'
+      RestApiId: !Ref BedrockLambdaApi
+  
+  LLMResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId: !GetAtt BedrockLambdaApi.RootResourceId
+      PathPart: 'llms'
+      RestApiId: !Ref BedrockLambdaApi
+      
+  PromptResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId: !GetAtt BedrockLambdaApi.RootResourceId
+      PathPart: 'prompt'
+      RestApiId: !Ref BedrockLambdaApi
+  
+  # RAG Method Config
+  RagOptionsMethod:
+    Type: AWS::ApiGateway::Method
+    DependsOn: RagResource
+    Properties:
+      HttpMethod: OPTIONS
+      ResourceId: !Ref RagResource
+      RestApiId: !Ref BedrockLambdaApi
+      AuthorizationType: NONE
+      Integration:
+        IntegrationResponses:
+          - StatusCode: 200
+            ResponseParameters:
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Methods: "'POST,OPTIONS'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        PassthroughBehavior: WHEN_NO_MATCH
+        RequestTemplates:
+          application/json: '{"statusCode": 200}'
+        IntegrationHttpMethod: POST
+        Type: MOCK
+      MethodResponses:
+        - StatusCode: 200
+          ResponseModels:
+            application/json: 'Empty'
+          ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+            method.response.header.Access-Control-Allow-Methods: "'POST,OPTIONS'"
+            method.response.header.Access-Control-Allow-Origin: "'*'"
+    
+  RagPostMethod:
+    Type: AWS::ApiGateway::Method
+    DependsOn: RagFunction
+    Properties:
+      HttpMethod: POST
+      ResourceId: !Ref RagResource
+      RestApiId: !Ref BedrockLambdaApi
+      AuthorizationType: NONE
+      Integration:
+        IntegrationHttpMethod: POST
+        Type: AWS_PROXY
+        Uri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${RagFunction.Arn}/invocations"
+      MethodResponses:
+        - StatusCode: 200
+          ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+            method.response.header.Access-Control-Allow-Methods: "'POST,OPTIONS'"
+            method.response.header.Access-Control-Allow-Origin: "'*'"
+  
+  RagFunctionPermission:
+    Type: AWS::Lambda::Permission
+    DependsOn: RagFunction
+    Properties:
+      FunctionName: !Ref RagFunction
+      Action: lambda:InvokeFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${BedrockLambdaApi}/*/*/*"
+  
+  # RagApiDeployment:
+  #   Type: AWS::ApiGateway::Deployment
+  #   DependsOn:  RagPostMethod
+  #   Properties:
+  #     Description: RAG API Deployment
+  #     RestApiId: !Ref BedrockLambdaApi
+  
+  # Prompt Method Config
+  PromptOptionsMethod:
+    Type: AWS::ApiGateway::Method
+    DependsOn: PromptResource
+    Properties:
+      HttpMethod: OPTIONS
+      ResourceId: !Ref PromptResource
+      RestApiId: !Ref BedrockLambdaApi
+      AuthorizationType: NONE
+      Integration:
+        IntegrationResponses:
+          - StatusCode: 200
+            ResponseParameters:
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Methods: "'POST,OPTIONS'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        PassthroughBehavior: WHEN_NO_MATCH
+        RequestTemplates:
+          application/json: '{"statusCode": 200}'
+        IntegrationHttpMethod: POST
+        Type: MOCK
+      MethodResponses:
+        - StatusCode: 200
+          ResponseModels:
+            application/json: 'Empty'
+          ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+            method.response.header.Access-Control-Allow-Methods: "'POST,OPTIONS'"
+            method.response.header.Access-Control-Allow-Origin: "'*'"
+    
+  PromptPostMethod:
+    Type: AWS::ApiGateway::Method
+    DependsOn: PromptFunction
+    Properties:
+      HttpMethod: POST
+      ResourceId: !Ref PromptResource
+      RestApiId: !Ref BedrockLambdaApi
+      AuthorizationType: NONE
+      Integration:
+        IntegrationHttpMethod: POST
+        Type: AWS_PROXY
+        Uri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PromptFunction.Arn}/invocations"
+      MethodResponses:
+        - StatusCode: 200
+          ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+            method.response.header.Access-Control-Allow-Methods: "'POST,OPTIONS'"
+            method.response.header.Access-Control-Allow-Origin: "'*'"
+  
+  PromptFunctionPermission:
+    Type: AWS::Lambda::Permission
+    DependsOn: PromptFunction
+    Properties:
+      FunctionName: !Ref PromptFunction
+      Action: lambda:InvokeFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${BedrockLambdaApi}/*/*/*"
+  
+  # PromptApiDeployment:
+  #   Type: AWS::ApiGateway::Deployment
+  #   DependsOn:  PromptPostMethod
+  #   Properties:
+  #     Description: RAG API Deployment
+  #     RestApiId: !Ref BedrockLambdaApi
+      
+  # LLM Method Config
+  LLMOptionsMethod:
+    Type: AWS::ApiGateway::Method
+    DependsOn: LLMResource
+    Properties:
+      HttpMethod: OPTIONS
+      ResourceId: !Ref LLMResource
+      RestApiId: !Ref BedrockLambdaApi
+      AuthorizationType: NONE
+      Integration:
+        IntegrationResponses:
+          - StatusCode: 200
+            ResponseParameters:
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Methods: "'POST,OPTIONS'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        PassthroughBehavior: WHEN_NO_MATCH
+        RequestTemplates:
+          application/json: '{"statusCode": 200}'
+        IntegrationHttpMethod: POST
+        Type: MOCK
+      MethodResponses:
+        - StatusCode: 200
+          ResponseModels:
+            application/json: 'Empty'
+          ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+            method.response.header.Access-Control-Allow-Methods: "'POST,OPTIONS'"
+            method.response.header.Access-Control-Allow-Origin: "'*'"
+    
+  LLMPostMethod:
+    Type: AWS::ApiGateway::Method
+    DependsOn: LLMFunction
+    Properties:
+      HttpMethod: POST
+      ResourceId: !Ref LLMResource
+      RestApiId: !Ref BedrockLambdaApi
+      AuthorizationType: NONE
+      Integration:
+        IntegrationHttpMethod: POST
+        Type: AWS_PROXY
+        Uri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${LLMFunction.Arn}/invocations"
+      MethodResponses:
+        - StatusCode: 200
+          ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+            method.response.header.Access-Control-Allow-Methods: "'POST,OPTIONS'"
+            method.response.header.Access-Control-Allow-Origin: "'*'"
+  
+  LLMFunctionPermission:
+    Type: AWS::Lambda::Permission
+    DependsOn: LLMFunction
+    Properties:
+      FunctionName: !Ref LLMFunction
+      Action: lambda:InvokeFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${BedrockLambdaApi}/*/*/*"
+  
+  ApiDeployment:
+    Type: AWS::ApiGateway::Deployment
+    DependsOn: 
+       - LLMPostMethod
+       - RagPostMethod
+       - PromptPostMethod
+    Properties:
+      Description: API Deployment
+      RestApiId: !Ref BedrockLambdaApi
+  
+  #### Cognito Auth Config
+  ApiCognitoAuthorizer:          
+    Type: AWS::ApiGateway::Authorizer
+    Properties:
+      IdentitySource: 'method.request.header.Authorization'
+      Name: ApiCognitoAuthorizer
+      ProviderARNs:
+        - !GetAtt ChatbotUserPool.Arn
+      RestApiId: !Ref BedrockLambdaApi
+      Type: COGNITO_USER_POOLS
+
+  ChatbotUserPool:
+      Type: AWS::Cognito::UserPool
+      Properties:
+        UsernameConfiguration: 
+          CaseSensitive: false
+        AutoVerifiedAttributes:
+          - email
+        Schema:
+          - Name: email
+            AttributeDataType: String
+            Mutable: false
+            Required: true
+          - Name: name
+            AttributeDataType: String
+            Mutable: true
+            Required: true
+  ChatbotUserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      UserPoolId: !Ref ChatbotUserPool
+      ExplicitAuthFlows:
+        - ALLOW_USER_PASSWORD_AUTH
+        - ALLOW_REFRESH_TOKEN_AUTH
+        - ALLOW_USER_SRP_AUTH
+        - ALLOW_CUSTOM_AUTH
+      AllowedOAuthFlowsUserPoolClient: true
+      CallbackURLs:
+        - http://localhost:3000
+      AllowedOAuthFlows:
+        - code
+        - implicit
+      AllowedOAuthScopes:
+        - phone
+        - email
+        - openid
+        - profile
+      SupportedIdentityProviders:
+        - COGNITO
+
+  # create a secret value for Cognito login
+  SecretsValue:
+    Type: AWS::SecretsManager::Secret
+    Properties:
+      Name: !Sub "ui-credentials-${BedrockLambdaApi}"
+      SecretString: !Sub '{"username":"bedrock","password":"${ChatbotUserPoolClient}"}'
+      Tags:
+        - Key: Name
+          Value: !Sub "ui-credentials-${BedrockLambdaApi}"
+
+
+  CognitoUserCreateFunction:
+    Type: AWS::Serverless::Function 
+    Properties:
+      FunctionName: !Sub ${AWS::StackName}-CognitoUserCreateFunction
+      CodeUri: lambdas/cognitoUser
+      Environment:
+        Variables:
+          Cognito_UserPool: !Ref ChatbotUserPool
+          Cognito_ClientID: !Ref ChatbotUserPoolClient
+          SECRET_ID: 
+            Fn::Sub: "ui-credentials-${BedrockLambdaApi}"
+      Role: !Ref LambdaRole
+
+
+  ApiGatewayStage:
+    Type: AWS::ApiGateway::Stage
+    Properties:
+      DeploymentId: !Ref ApiDeployment
+      Description: Lambda API Stage
+      RestApiId: !Ref BedrockLambdaApi
+      StageName: !Ref ApiGatewayStageName
+      
+      
+  LLMFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${AWS::StackName}-LLMFunction
+      CodeUri: lambdas/llmFunction
+      Role: !Ref LambdaRole
+  
+  RagFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${AWS::StackName}-RagFunction
+      CodeUri: lambdas/ragFunction
+      Environment:
+        Variables:
+          KENDRA_INDEX_ID: !Ref KendraIndexId
+          S3_BUCKET_NAME: !Ref BedrockWSS3Bucket 
+      Role: !Ref LambdaRole
+      
+  PromptFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${AWS::StackName}-PromptFunction
+      CodeUri: lambdas/promptFunction
+      Environment:
+        Variables:
+          KENDRA_INDEX_ID: !Ref KendraIndexId
+          S3_BUCKET_NAME: !Ref BedrockWSS3Bucket 
+      Role: !Ref LambdaRole
+          
+Outputs:
+    CognitoUserPool:
+      Description: Cognito User Pool
+      Value:
+        Fn::Sub: "${ChatbotUserPool}"
+    
+    CongnitoUserPoolClientID:
+      Description: Cognito User Pool Client ID
+      Value:
+        Fn::Sub: "${ChatbotUserPoolClient}"
+        
+    BedrockApiUrl:
+      Description: API Gateway endpoint URL for the Bedrock Lambda Function
+      Value:
+        Fn::Sub: "https://${BedrockLambdaApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/prod"
+
+    SecretsName:
+      Description: Secrets name to retrieve ui credentials
+      Value:
+        Fn::Sub: "ui-credentials-${BedrockLambdaApi}"

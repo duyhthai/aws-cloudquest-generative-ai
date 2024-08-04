@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+region = "<AWS_REGION>"
+stack_name = "<SAMStackName>"
+s3_bucket = "<LabBucketName>"
+s3_prefix = "<SAMStackName>"
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "StackName=\"\" KendraIndexId=\"<KendraIndexId>\" LabBucketName=\"<LabBucketName>\" BedrockWSS3Bucket=\"<S3BucketName>\" ApiGatewayStageName=\"prod\" LambdaRole=\"<LambdaRole>\""
