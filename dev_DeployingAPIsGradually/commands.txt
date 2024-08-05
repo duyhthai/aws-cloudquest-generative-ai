@@ -1,0 +1,6 @@
+python3.8 -m venv .venv
+source .venv/bin/activate
+sam init
+sam build
+sam deploy --guided
+sam validate
