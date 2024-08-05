@@ -1,0 +1,1 @@
+aws s3 mb s3://<unique-bucket-name>

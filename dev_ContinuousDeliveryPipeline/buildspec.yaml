@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+       python: 3.9
+  build:
+    commands:
+      - pip install aws-sam-cli
+      - sam build -t sam-app/template.yaml
+      - sam package --template-file sam-app/template.yaml --output-template-file outputtemplate.yaml --s3-bucket <REPLACE - YOUR BUCKET NAME>
+artifacts:
+  files: 
+    - outputtemplate.yaml
