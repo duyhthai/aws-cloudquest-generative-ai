@@ -1,0 +1,19 @@
+{
+  "overall_accuracy": 0.85484,
+  "classification_report": "              precision    recall  f1-score   support\n\n         0.0       0.75      0.67      0.71       621\n         1.0       0.89      0.92      0.90      1735\n\n    accuracy                           0.85      2356\n   macro avg       0.82      0.80      0.81      2356\nweighted avg       0.85      0.85      0.85      2356\n",
+  "micro_performance_metrics": {
+    "precision": 0.85484,
+    "recall": 0.85484,
+    "f1_score": 0.85484
+  },
+  "macro_performance_metrics": {
+    "precision": 0.81857,
+    "recall": 0.79701,
+    "f1_score": 0.80667
+  },
+  "weighted_performance_metrics": {
+    "precision": 0.85121,
+    "recall": 0.85484,
+    "f1_score": 0.8523
+  }
+}

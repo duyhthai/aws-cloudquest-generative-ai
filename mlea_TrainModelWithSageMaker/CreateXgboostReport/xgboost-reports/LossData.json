@@ -1,0 +1,1604 @@
+{
+  "category_loss_per_step": [
+    {
+      "steps": 0,
+      "loss": 0.59441,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 5,
+      "loss": 0.39984,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 10,
+      "loss": 0.3465,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 15,
+      "loss": 0.32544,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 20,
+      "loss": 0.31532,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 25,
+      "loss": 0.3087,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 30,
+      "loss": 0.30358,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 35,
+      "loss": 0.30091,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 40,
+      "loss": 0.29802,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 45,
+      "loss": 0.29549,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 50,
+      "loss": 0.29393,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 55,
+      "loss": 0.29281,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 60,
+      "loss": 0.29135,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 65,
+      "loss": 0.29021,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 70,
+      "loss": 0.28937,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 75,
+      "loss": 0.28841,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 80,
+      "loss": 0.2877,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 85,
+      "loss": 0.28712,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 90,
+      "loss": 0.28644,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 95,
+      "loss": 0.28596,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 100,
+      "loss": 0.28553,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 105,
+      "loss": 0.28486,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 110,
+      "loss": 0.2843,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 115,
+      "loss": 0.28399,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 120,
+      "loss": 0.28363,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 125,
+      "loss": 0.28349,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 130,
+      "loss": 0.28296,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 135,
+      "loss": 0.28263,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 140,
+      "loss": 0.28208,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 145,
+      "loss": 0.28168,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 150,
+      "loss": 0.28119,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 155,
+      "loss": 0.28094,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 160,
+      "loss": 0.28067,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 165,
+      "loss": 0.28059,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 170,
+      "loss": 0.28015,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 175,
+      "loss": 0.27969,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 180,
+      "loss": 0.27914,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 185,
+      "loss": 0.27891,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 190,
+      "loss": 0.27882,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 195,
+      "loss": 0.27875,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 200,
+      "loss": 0.27859,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 205,
+      "loss": 0.27849,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 210,
+      "loss": 0.27838,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 215,
+      "loss": 0.27824,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 220,
+      "loss": 0.27813,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 225,
+      "loss": 0.278,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 230,
+      "loss": 0.27776,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 235,
+      "loss": 0.27756,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 240,
+      "loss": 0.27749,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 245,
+      "loss": 0.27738,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 250,
+      "loss": 0.2773,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 255,
+      "loss": 0.27724,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 260,
+      "loss": 0.27689,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 265,
+      "loss": 0.27671,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 270,
+      "loss": 0.2766,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 275,
+      "loss": 0.2762,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 280,
+      "loss": 0.27609,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 285,
+      "loss": 0.27597,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 290,
+      "loss": 0.27572,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 295,
+      "loss": 0.27551,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 300,
+      "loss": 0.27519,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 305,
+      "loss": 0.27511,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 310,
+      "loss": 0.2748,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 315,
+      "loss": 0.27469,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 320,
+      "loss": 0.27457,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 325,
+      "loss": 0.27446,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 330,
+      "loss": 0.27435,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 335,
+      "loss": 0.27432,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 340,
+      "loss": 0.27407,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 345,
+      "loss": 0.27379,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 350,
+      "loss": 0.2735,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 355,
+      "loss": 0.27345,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 360,
+      "loss": 0.27331,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 365,
+      "loss": 0.27321,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 370,
+      "loss": 0.27299,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 375,
+      "loss": 0.27292,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 380,
+      "loss": 0.27284,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 385,
+      "loss": 0.27247,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 390,
+      "loss": 0.27235,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 395,
+      "loss": 0.2723,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 400,
+      "loss": 0.27222,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 405,
+      "loss": 0.27205,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 410,
+      "loss": 0.27198,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 415,
+      "loss": 0.27198,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 420,
+      "loss": 0.27193,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 425,
+      "loss": 0.27178,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 430,
+      "loss": 0.27146,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 435,
+      "loss": 0.27138,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 440,
+      "loss": 0.27111,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 445,
+      "loss": 0.27106,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 450,
+      "loss": 0.27102,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 455,
+      "loss": 0.27093,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 460,
+      "loss": 0.2709,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 465,
+      "loss": 0.2708,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 470,
+      "loss": 0.2708,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 475,
+      "loss": 0.27073,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 480,
+      "loss": 0.27066,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 485,
+      "loss": 0.27066,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 490,
+      "loss": 0.27053,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 495,
+      "loss": 0.27045,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 500,
+      "loss": 0.2704,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 505,
+      "loss": 0.2704,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 510,
+      "loss": 0.27027,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 515,
+      "loss": 0.27015,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 520,
+      "loss": 0.27015,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 525,
+      "loss": 0.27014,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 530,
+      "loss": 0.27012,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 535,
+      "loss": 0.27,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 540,
+      "loss": 0.26992,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 545,
+      "loss": 0.26992,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 550,
+      "loss": 0.26978,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 555,
+      "loss": 0.26951,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 560,
+      "loss": 0.26933,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 565,
+      "loss": 0.26931,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 570,
+      "loss": 0.2692,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 575,
+      "loss": 0.26915,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 580,
+      "loss": 0.26913,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 585,
+      "loss": 0.26897,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 590,
+      "loss": 0.2689,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 595,
+      "loss": 0.26881,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 600,
+      "loss": 0.26864,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 605,
+      "loss": 0.26864,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 610,
+      "loss": 0.26854,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 615,
+      "loss": 0.26847,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 620,
+      "loss": 0.26844,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 625,
+      "loss": 0.26822,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 630,
+      "loss": 0.26812,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 635,
+      "loss": 0.26795,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 640,
+      "loss": 0.26786,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 645,
+      "loss": 0.26784,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 650,
+      "loss": 0.26775,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 655,
+      "loss": 0.26775,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 660,
+      "loss": 0.26775,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 665,
+      "loss": 0.26775,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 670,
+      "loss": 0.26756,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 675,
+      "loss": 0.26731,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 680,
+      "loss": 0.2672,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 685,
+      "loss": 0.2672,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 690,
+      "loss": 0.26717,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 695,
+      "loss": 0.26711,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 700,
+      "loss": 0.26711,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 705,
+      "loss": 0.267,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 710,
+      "loss": 0.26685,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 715,
+      "loss": 0.26671,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 720,
+      "loss": 0.26661,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 725,
+      "loss": 0.26637,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 730,
+      "loss": 0.26637,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 735,
+      "loss": 0.26619,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 740,
+      "loss": 0.26614,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 745,
+      "loss": 0.26614,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 750,
+      "loss": 0.26598,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 755,
+      "loss": 0.26588,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 760,
+      "loss": 0.26573,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 765,
+      "loss": 0.2656,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 770,
+      "loss": 0.26557,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 775,
+      "loss": 0.26545,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 780,
+      "loss": 0.26535,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 785,
+      "loss": 0.26534,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 790,
+      "loss": 0.26526,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 795,
+      "loss": 0.2652,
+      "category": "train-logloss"
+    },
+    {
+      "steps": 0,
+      "loss": 0.59498,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 5,
+      "loss": 0.40308,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 10,
+      "loss": 0.35288,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 15,
+      "loss": 0.33115,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 20,
+      "loss": 0.32175,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 25,
+      "loss": 0.31676,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 30,
+      "loss": 0.31151,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 35,
+      "loss": 0.30932,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 40,
+      "loss": 0.30775,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 45,
+      "loss": 0.30529,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 50,
+      "loss": 0.30454,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 55,
+      "loss": 0.30345,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 60,
+      "loss": 0.30342,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 65,
+      "loss": 0.30266,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 70,
+      "loss": 0.30297,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 75,
+      "loss": 0.30285,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 80,
+      "loss": 0.30299,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 85,
+      "loss": 0.30305,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 90,
+      "loss": 0.30279,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 95,
+      "loss": 0.30229,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 100,
+      "loss": 0.30218,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 105,
+      "loss": 0.30179,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 110,
+      "loss": 0.30129,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 115,
+      "loss": 0.30162,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 120,
+      "loss": 0.30164,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 125,
+      "loss": 0.30163,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 130,
+      "loss": 0.30134,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 135,
+      "loss": 0.30121,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 140,
+      "loss": 0.30084,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 145,
+      "loss": 0.30098,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 150,
+      "loss": 0.30147,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 155,
+      "loss": 0.30145,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 160,
+      "loss": 0.3014,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 165,
+      "loss": 0.30125,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 170,
+      "loss": 0.30147,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 175,
+      "loss": 0.30137,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 180,
+      "loss": 0.30219,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 185,
+      "loss": 0.30204,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 190,
+      "loss": 0.30223,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 195,
+      "loss": 0.30234,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 200,
+      "loss": 0.30215,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 205,
+      "loss": 0.3024,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 210,
+      "loss": 0.30222,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 215,
+      "loss": 0.30222,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 220,
+      "loss": 0.30246,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 225,
+      "loss": 0.30229,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 230,
+      "loss": 0.30252,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 235,
+      "loss": 0.30262,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 240,
+      "loss": 0.30262,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 245,
+      "loss": 0.30254,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 250,
+      "loss": 0.30248,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 255,
+      "loss": 0.30262,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 260,
+      "loss": 0.30286,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 265,
+      "loss": 0.30313,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 270,
+      "loss": 0.30308,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 275,
+      "loss": 0.30266,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 280,
+      "loss": 0.30297,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 285,
+      "loss": 0.30293,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 290,
+      "loss": 0.30307,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 295,
+      "loss": 0.30312,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 300,
+      "loss": 0.30304,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 305,
+      "loss": 0.30308,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 310,
+      "loss": 0.30342,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 315,
+      "loss": 0.30356,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 320,
+      "loss": 0.30339,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 325,
+      "loss": 0.30346,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 330,
+      "loss": 0.30369,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 335,
+      "loss": 0.30367,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 340,
+      "loss": 0.30356,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 345,
+      "loss": 0.30373,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 350,
+      "loss": 0.3044,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 355,
+      "loss": 0.30422,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 360,
+      "loss": 0.30407,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 365,
+      "loss": 0.3039,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 370,
+      "loss": 0.30356,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 375,
+      "loss": 0.30335,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 380,
+      "loss": 0.30353,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 385,
+      "loss": 0.30378,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 390,
+      "loss": 0.30457,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 395,
+      "loss": 0.30475,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 400,
+      "loss": 0.30463,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 405,
+      "loss": 0.30495,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 410,
+      "loss": 0.30452,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 415,
+      "loss": 0.30451,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 420,
+      "loss": 0.30448,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 425,
+      "loss": 0.30442,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 430,
+      "loss": 0.30467,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 435,
+      "loss": 0.30485,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 440,
+      "loss": 0.30514,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 445,
+      "loss": 0.30533,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 450,
+      "loss": 0.30523,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 455,
+      "loss": 0.30534,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 460,
+      "loss": 0.30535,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 465,
+      "loss": 0.3054,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 470,
+      "loss": 0.30539,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 475,
+      "loss": 0.30536,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 480,
+      "loss": 0.3055,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 485,
+      "loss": 0.30554,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 490,
+      "loss": 0.30533,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 495,
+      "loss": 0.30528,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 500,
+      "loss": 0.30513,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 505,
+      "loss": 0.30515,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 510,
+      "loss": 0.30528,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 515,
+      "loss": 0.30519,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 520,
+      "loss": 0.30519,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 525,
+      "loss": 0.30519,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 530,
+      "loss": 0.30519,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 535,
+      "loss": 0.30577,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 540,
+      "loss": 0.30538,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 545,
+      "loss": 0.30539,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 550,
+      "loss": 0.30541,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 555,
+      "loss": 0.30548,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 560,
+      "loss": 0.30554,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 565,
+      "loss": 0.30537,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 570,
+      "loss": 0.30536,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 575,
+      "loss": 0.30547,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 580,
+      "loss": 0.30541,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 585,
+      "loss": 0.3053,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 590,
+      "loss": 0.30545,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 595,
+      "loss": 0.30532,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 600,
+      "loss": 0.30546,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 605,
+      "loss": 0.30552,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 610,
+      "loss": 0.30559,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 615,
+      "loss": 0.30543,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 620,
+      "loss": 0.30562,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 625,
+      "loss": 0.30578,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 630,
+      "loss": 0.30596,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 635,
+      "loss": 0.30635,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 640,
+      "loss": 0.30656,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 645,
+      "loss": 0.3066,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 650,
+      "loss": 0.30683,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 655,
+      "loss": 0.30683,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 660,
+      "loss": 0.30688,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 665,
+      "loss": 0.30685,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 670,
+      "loss": 0.30682,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 675,
+      "loss": 0.30692,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 680,
+      "loss": 0.30684,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 685,
+      "loss": 0.30682,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 690,
+      "loss": 0.30676,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 695,
+      "loss": 0.30671,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 700,
+      "loss": 0.30681,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 705,
+      "loss": 0.30691,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 710,
+      "loss": 0.30679,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 715,
+      "loss": 0.30714,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 720,
+      "loss": 0.30721,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 725,
+      "loss": 0.30706,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 730,
+      "loss": 0.30704,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 735,
+      "loss": 0.30764,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 740,
+      "loss": 0.30767,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 745,
+      "loss": 0.30768,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 750,
+      "loss": 0.30788,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 755,
+      "loss": 0.30803,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 760,
+      "loss": 0.30794,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 765,
+      "loss": 0.30771,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 770,
+      "loss": 0.30801,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 775,
+      "loss": 0.30773,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 780,
+      "loss": 0.30791,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 785,
+      "loss": 0.308,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 790,
+      "loss": 0.30794,
+      "category": "validation-logloss"
+    },
+    {
+      "steps": 795,
+      "loss": 0.30788,
+      "category": "validation-logloss"
+    }
+  ]
+}
